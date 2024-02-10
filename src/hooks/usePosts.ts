@@ -2,15 +2,17 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Post } from "../react-query/PostList";
 
-const usePosts = () => {
-  const fetchPosts = () => {
-    return axios
-      .get<Post[]>("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => res.data);
-  };
+const usePosts = (userId: number | undefined) => {
   return useQuery<Post[], Error>({
-    queryKey: ["Posts"],
-    queryFn: fetchPosts,
+    queryKey: userId ? ["users", userId, "Posts"] : ["Posts"],
+    queryFn: () =>
+      axios
+        .get<Post[]>("https://jsonplaceholder.typicode.com/posts", {
+          params: {
+            userId,
+          },
+        })
+        .then((res) => res.data),
   });
 };
 
