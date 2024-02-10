@@ -9,7 +9,7 @@ const useTodos = () => {
       .then((res) => res.data);
   };
   return useQuery<Todo[], Error>({
-    queryKey: ["todos", "completed"],
+    queryKey: ["todos"],
     queryFn: fetchTodos,
     staleTime: 10 * 1000,
   });
