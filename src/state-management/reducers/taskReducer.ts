@@ -13,7 +13,7 @@ interface TaskReducerDeleteActions {
   taskId: number;
 }
 
-type TaskReducerActions = TaskReducerAddActions | TaskReducerDeleteActions;
+export type TaskReducerActions = TaskReducerAddActions | TaskReducerDeleteActions;
 
 const taskReducer = (state: Task[], action: TaskReducerActions): Task[] => {
   if (action.type === "ADD") return [...state, action.payload];
