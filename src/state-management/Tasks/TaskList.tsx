@@ -1,4 +1,4 @@
-import { useTasksContext } from "./contexts/tasksContext";
+import { useTasksContext } from "./tasksContext.ts";
 
 const TaskList = () => {
   const { tasks, dispatch } = useTasksContext();

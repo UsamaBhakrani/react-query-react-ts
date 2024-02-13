@@ -1,5 +1,5 @@
-import LoginStatus from "./LoginStatus";
-import { useTasksContext } from "./contexts/tasksContext";
+import LoginStatus from "./Auth/LoginStatus";
+import { useTasksContext } from "./Tasks/tasksContext";
 
 const NavBar = () => {
   const { tasks, dispatch } = useTasksContext();

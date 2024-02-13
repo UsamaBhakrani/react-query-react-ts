@@ -1,9 +1,9 @@
-import { useReducer, useState } from "react";
-import counterReducer from "./reducers/counterReducer";
+import { useReducer } from "react";
+import counterReducer from "./counterReducer.ts";
 
 const Counter = () => {
   const [value, dispatch] = useReducer(counterReducer, 0);
-  
+
   return (
     <div>
       Counter ({value})

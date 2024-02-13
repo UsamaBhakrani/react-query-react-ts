@@ -1,4 +1,4 @@
-import { useLoginContext } from "./contexts/loginContext";
+import { useLoginContext } from "./loginContext";
 
 const LoginStatus = () => {
   const { user, dispatch } = useLoginContext();
