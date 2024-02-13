@@ -1,9 +1,7 @@
-import { useReducer } from "react";
-import loginReducer from "./reducers/loginReducer";
+import { useLoginContext } from "./contexts/loginContext";
 
 const LoginStatus = () => {
-  const [user, dispatch] = useReducer(loginReducer, "");
-
+  const { user, dispatch } = useLoginContext();
   if (user)
     return (
       <>
